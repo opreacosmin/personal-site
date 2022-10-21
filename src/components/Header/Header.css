@@ -1,0 +1,62 @@
+.header-container{
+    position: relative;
+    overflow: hidden;
+    display:flex;
+    padding: 50px;
+    background-color: white;
+}
+
+.header-container::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 40%;
+    width: 100vh;
+    height: 100vh;
+    background: black;
+    border-radius: 50%;
+    transform-origin: bottom;
+    transform: translateX(-50%) scale(4);
+}
+
+.content{
+    display: flex;
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+}
+
+
+.logo > img{
+    padding: -20px;
+    border-radius: 1000px;
+    height: 380px;
+    width: 380px;
+}
+
+.info{
+    margin-top: 120px;
+}
+
+.info > p {
+    font-family: "Novelty";
+    color: white;
+    font-size: 20px;
+}
+
+@media screen and (max-width: 700px) {
+    .logo > img{
+        height: 300px;
+        width: 300px;
+    }
+    .info{
+        margin-top: 80px;
+    }
+
+}
+
+@media screen and (min-width: 1000px){
+    .logo{
+        margin-left: 50px;
+    }
+}

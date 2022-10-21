@@ -1,0 +1,95 @@
+:root {
+    --primary: #fff;
+}
+
+.btn {
+    align-self: flex-end;
+    padding: 8px 20px;
+    border-radius: 2px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    width: auto;
+
+}
+
+.btn--primary {
+    background-color: var(--primary);
+    color: #242424;
+    border: 1px solid var(--primary);
+}
+
+.btn--outline {
+    width: auto;
+    background-color: transparent;
+    color: #fff;
+    padding: 8px 20px;
+    border: 1px solid var(--primary);
+    transition: all 0.3s ease-out;
+}
+
+.btn--medium {
+    padding: 8px 20px;
+    font-size: 18px;
+}
+
+.btn--large {
+    padding: 12px 26px;
+    font-size: 20px;
+}
+
+.btn--large:hover,
+.btn--medium:hover {
+    transition: all 0.3s ease-out;
+    background: #fff;
+    color: #242424;
+}
+
+
+
+.btn--submit{
+    width: 200px;
+    background-color: peachpuff;
+    color: black;
+    font-weight: 550;
+}
+
+.btn--submit:hover{
+    background-color: #ffedb8;
+}
+
+
+.btn--back-to-top{
+    position: fixed;
+    padding: 5px 10px 5px 15px;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    z-index: 10;
+    background-color: black;
+    border-radius: 30px;
+    border-style: solid ;
+    border-width: 1px ;
+    border-color: rgb(0, 0, 0);
+    border-image: initial;
+    transition: all 0.4s ease 0s;
+    right: 25px;
+    bottom: 65px;
+    box-shadow: 7px 4px 3px rgb(0, 0, 0);
+    width: auto;
+    max-width: 80px!important;
+}
+
+.btn--back-to-top:hover{
+    background: #fff;
+    color: #242424;
+}
+
+.nav--btn{
+    background-color: #282c34;
+    color: white;
+}
+
+.nav--btn:hover{
+    background-color: #282c34;
+    color:pink;
+}

@@ -1,0 +1,75 @@
+.contact{
+    background-image: url("./../../resources/pexels-tomás-monteiro-4107897.jpg");
+    background-size: cover;
+}
+
+.contact-wrapper{
+    background: linear-gradient(rgba(0,0,0,0.20),rgba(0,0,0,0.50));
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-wrapper >h1{
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 20px;
+    color: whitesmoke;
+}
+
+.contact-wrapper >p{
+    margin-left: auto;
+    margin-right: auto;
+    color: whitesmoke;
+}
+
+.subscription-container{
+
+}
+
+.subscription-container{
+    margin: 0 auto;
+    padding: 30px;
+    position: relative;
+    max-width: 840px;
+}
+
+
+.col-sm-12{
+    margin-bottom: 10px;
+}
+
+
+.form {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    font-family: 'Lato';
+    font-weight: 400;
+}
+
+.form > button{
+    margin-top: 20px;
+    margin-right: 160px;
+}
+
+.form-control,
+textarea {
+    min-height: 50px;
+    max-height: 300px;
+    min-width: 400px;
+    max-width: 450px;
+    background-color: #000;
+    color: #fff;
+    letter-spacing: 1px;
+}
+.subscription-container > form > input{
+    margin: 5px;
+    background-color: #2d2d2d;
+    color: white;
+    border-radius: 3px;
+    height: 30px;
+    max-width: 200px;
+}
