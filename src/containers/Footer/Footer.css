@@ -1,0 +1,110 @@
+.footer-container{
+    height: auto;
+    min-height: 200px;
+    width: 100%;
+    background: black;
+    /*background-image: url("./../../resources/pexels-matej-1074882.jpg");
+    background-size: 100% 100%;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+    padding-bottom: 50px;
+
+}
+
+.contact-container >h1{
+    color: white;
+    font-size: 45px;
+    font-family: -apple-system;
+    margin-bottom: 10px;
+}
+
+.contact-container > p{
+    text-align: center;
+    color: white;
+    max-width: 330px;
+    font-size: 18px;
+    font-family: -apple-system;
+
+}
+
+.mail-icon{
+    color: white;
+}
+
+.phone-icon{
+    color: white;
+}
+
+.contact-container .socials{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+    margin-top: 15px;
+}
+
+.socials a{
+    color: white;
+    padding: 5px;
+    margin-right: 10px ;
+    transition: 0.5s;
+    width: 25px;
+}
+
+.socials a .icon{
+    font-size: 29px;
+}
+
+.contact-container .socials a:hover{
+    transform: translateY(10px);
+}
+
+
+.credits-container{
+    margin-top: -20px;
+    height: 60px;
+    display: flex;
+    position: relative;
+    background-color: #17181c;
+    color: white;
+}
+
+.credits-container > p{
+    margin-top: 5px;
+    margin-left: 80px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+@media screen and (max-width: 600px) {
+    .credits-container > p{
+        font-size: 15px;
+        margin-left: 0;
+    }
+}
+
+
+@media screen and (max-width: 700px) {
+    .credits-container .socials{
+        display: none;
+    }
+    .credits-container > p{
+        position: absolute;
+        left: 35px;
+    }
+    .contact-container .socials{
+        margin-top: 10px;
+        display: block;
+        position: relative;
+    }
+}
