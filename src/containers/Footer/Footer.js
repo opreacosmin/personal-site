@@ -1,6 +1,5 @@
 import React from "react";
 import "./Footer.css";
-import PhoneIcon from '@mui/icons-material/Phone';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import InstagramIcon from '@mui/icons-material/Instagram';
@@ -23,16 +22,13 @@ function Footer(){
                         <a href='https://www.instagram.com/cosmin.alexandru1/'>
                             <InstagramIcon className='icon'/>
                         </a>
-                        <a href='https://twitter.com/Opreacosmin131'>
-                            <TwitterIcon className='icon'/>
-                        </a>
                         <a href='https://web.facebook.com/cosminutzu.alexandru.9/'>
                             <FacebookIcon className='icon'/>
                         </a>
                         <a href='https://github.com/opreacosmin'>
                             <GitHubIcon className='icon'/>
                         </a>
-                        <a>
+                        <a href="mailto: opreacosmin2000@gmail.com">
                             <MailOutlineIcon  className='icon'/>
                         </a>
                     </div>

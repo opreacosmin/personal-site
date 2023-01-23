@@ -4,33 +4,31 @@
     height: 100%;
     width: 100%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     text-align: center;
 }
 
-.contact-wrapper >h1{
+.contact-wrapper .title >h1{
     position: relative;
     font-family: "Yu Gothic";
     font-size: 35px;
-    width: 210px;
-    margin-left: auto;
-    margin-right: auto;
+    width: auto;
     padding-top: 20px;
     color: black;
 }
 
-.contact-wrapper > h1::before {
+.contact-wrapper .title > h1::before {
     transform: scaleX(0);
     transform-origin: bottom right;
 }
 
-.contact-wrapper > h1:hover::before {
+.contact-wrapper .title > h1:hover::before {
     transform: scaleX(1);
     transform-origin: bottom left;
 }
 
-.contact-wrapper > h1::before {
+.contact-wrapper .title > h1::before {
     content: " ";
     display: block;
     position: absolute;
@@ -59,6 +57,22 @@
     }
 }
 
+@media screen and (max-width: 450px) {
+    .subscription-container .form {
+        width: 300px;
+    }
+    .subscription-container .form > button{
+        margin-right: 50px;
+    }
+
+    .form-control, textarea {
+        min-width: 250px;
+        width: 250px;
+        max-width: 250px;
+    }
+}
+
+
 .subscription-container{
     margin: 0 auto;
     padding: 30px;
@@ -75,6 +89,7 @@
 .form {
     display: flex;
     flex-direction: column;
+    width: 450px;
     max-width: 800px;
     font-family: 'Lato';
     font-weight: 400;
@@ -107,8 +122,6 @@
     min-height: 50px;
     max-height: 300px;
     width: 100%;
-    max-width: 100%;
-    min-width: 350px;
     background-color: black;
     color: #fff;
     letter-spacing: 1px;
@@ -118,13 +131,338 @@
 
 }
 
-@media screen and (max-width: 600px) {
-    .form-control, textarea {
-    }
-}
-
 .subscription-container > form > input{
     margin: 5px;
     background-color: #2d2d2d;
     color: white;
+}
+
+
+.title{
+    display: flex;
+    flex-direction: column;
+    margin: 50px;
+    justify-content: start;
+    align-items: center;
+}
+
+
+.letter-image {
+    position: relative;
+    cursor: pointer;
+    margin: 50px;
+    padding-right: 50px;
+}
+
+.animated-mail {
+    position: relative;
+    height: 100px;
+    width: 150px;
+    -webkit-transition: .4s;
+    -moz-transition: .4s;
+    transition: .4s;
+}
+
+.animated-mail .body {
+    position: relative;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0 100px 200px;
+    border-color: transparent transparent #e95f55 transparent;
+    z-index: 2;
+}
+
+.animated-mail .top-fold {
+    position: absolute;
+    top: 50px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 50px 100px 0 100px;
+    -webkit-transform-origin: 50% 0%;
+    -webkit-transition: transform .4s .4s, z-index .2s .4s;
+    -moz-transform-origin: 50% 0%;
+    -moz-transition: transform .4s .4s, z-index .2s .4s;
+    transform-origin: 50% 0%;
+    transition: transform .4s .4s, z-index .2s .4s;
+    border-color: #cf4a43 transparent transparent transparent;
+    z-index: 2;
+}
+
+.animated-mail .back-fold {
+    position: absolute;
+    bottom: 0;
+    width: 200px;
+    height: 100px;
+    background: #cf4a43;
+    z-index: 0;
+}
+
+.animated-mail .left-fold {
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 50px 0 50px 100px;
+    border-color: transparent transparent transparent #e15349;
+    z-index: 2;
+}
+
+.animated-mail .letter {
+    left: 20px;
+    bottom: 0px;
+    position: absolute;
+    width: 160px;
+    height: 60px;
+    background: white;
+    z-index: 1;
+    overflow: hidden;
+    -webkit-transition: .4s .2s;
+    -moz-transition: .4s .2s;
+    transition: .4s .2s;
+}
+
+.animated-mail .letter-border {
+    height: 10px;
+    width: 100%;
+    background: repeating-linear-gradient(
+            -45deg,
+            #cb5a5e,
+            #cb5a5e 8px,
+            transparent 8px,
+            transparent 18px
+    );
+}
+
+.animated-mail .letter-title {
+    margin-top: 10px;
+    margin-left: 5px;
+    height: 10px;
+    width: 40%;
+    background: #cb5a5e;
+}
+.animated-mail .letter-context {
+    margin-top: 10px;
+    margin-left: 5px;
+    height: 10px;
+    width: 20%;
+    background: #cb5a5e;
+}
+
+.animated-mail .letter-stamp {
+    margin-top: 30px;
+    margin-left: 120px;
+    border-radius: 100%;
+    height: 30px;
+    width: 30px;
+    background: #cb5a5e;
+    opacity: 0.3;
+}
+
+.shadow {
+    position: absolute;
+    top: 170px;
+    left: 50%;
+    width: 390px;
+    height: 30px;
+    transition: .4s;
+    transform: translateX(-50%);
+    -webkit-transition: .4s;
+    -webkit-transform: translateX(-50%);
+    -moz-transition: .4s;
+    -moz-transform: translateX(-50%);
+
+    border-radius: 100%;
+    background: radial-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.0), rgba(0,0,0,0.0));
+}
+
+
+.letter-image:hover .animated-mail {
+    transform: translateY(50px);
+    -webkit-transform: translateY(50px);
+    -moz-transform: translateY(50px);
+}
+
+.letter-image:hover .animated-mail .top-fold {
+    transition: transform .4s, z-index .2s;
+    transform: rotateX(180deg);
+    -webkit-transition: transform .4s, z-index .2s;
+    -webkit-transform: rotateX(180deg);
+    -moz-transition: transform .4s, z-index .2s;
+    -moz-transform: rotateX(180deg);
+    z-index: 0;
+}
+
+.letter-image:hover .animated-mail .letter {
+    height: 180px;
+}
+
+.letter-image:hover .shadow {
+    width: 250px;
+}
+
+
+@media screen and (max-width: 1100px) {
+
+    .contact-wrapper{
+        flex-direction: column;
+    }
+
+    .letter-image {
+        position: relative;
+        cursor: pointer;
+        margin-top: 50px; /* Reduced from 50px */
+        margin-bottom: 50px;
+        padding-right: 25px;
+    }
+
+    .animated-mail {
+        position: relative;
+        height: 50px; /* Reduced from 100px */
+        width: 75px; /* Reduced from 150px */
+        -webkit-transition: .4s;
+        -moz-transition: .4s;
+        transition: .4s;
+    }
+
+    .animated-mail .body {
+        position: relative;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 0 50px 100px; /* Reduced from 0 0 100px 200px */
+        border-color: transparent transparent #e95f55 transparent;
+        z-index: 2;
+    }
+
+    .animated-mail .top-fold {
+        position: absolute;
+        top: 25px; /* Reduced from 50px */
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 25px 50px 0 50px; /* Reduced from 50px 100px 0 100px */
+        -webkit-transform-origin: 50% 0%;
+        -webkit-transition: transform .4s .4s, z-index .2s .4s;
+        -moz-transform-origin: 50% 0%;
+        -moz-transition: transform .4s .4s, z-index .2s .4s;
+        transform-origin: 50% 0%;
+        transition: transform .4s .4s, z-index .2s .4s;
+        border-color: #cf4a43 transparent transparent transparent;
+        z-index: 2;
+    }
+
+    .animated-mail .back-fold {
+        position: absolute;
+        bottom: 0;
+        width: 100px; /* Reduced from 200px */
+        height: 50px; /* Reduced from 100px */
+        background: #cf4a43;
+        z-index: 0;
+    }
+
+    .animated-mail .left-fold {
+        position: absolute;
+        bottom: 0;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 25px 0 25px 50px; /* Reduced from 50px 0 50px 100px */
+        border-color: transparent transparent transparent #e15349;
+        z-index: 2;
+    }
+
+    .animated-mail .letter {
+        left: 10px; /* Reduced from 20px */
+        bottom: 0px;
+        position: absolute;
+        width: 80px; /* Reduced from 160px */
+        height: 30px; /* Reduced from 60px */
+        background: white;
+        z-index: 1;
+        overflow: hidden;
+        -webkit-transition: .4s .2s;
+        -moz-transition: .4s .2s;
+        transition: .4s .2s;
+    }
+
+    .animated-mail .letter-border {
+        height: 5px; /* Reduced from 10px */
+        width: 100%;
+        background: repeating-linear-gradient(
+                -45deg,
+                #cb5a5e,
+                #cb5a5e 4px,
+                transparent 4px,
+                transparent 9px
+        );
+    }
+
+    .animated-mail .letter-title {
+        margin-top: 5px; /* Reduced from 10px */
+        margin-left: 3px; /* Reduced from 5px */
+        height: 5px; /* Reduced from 10px */
+        width: 20%; /* Reduced from 40% */
+        background: #cb5a5e;
+    }
+
+    .animated-mail .letter-context {
+        margin-top: 5px; /* Reduced from 10px */
+        margin-left: 3px; /* Reduced from 5px */
+        height: 5px; /* Reduced from 10px */
+        width: 10%; /* Reduced from 20% */
+        background: #cb5a5e;
+    }
+
+    .animated-mail .letter-stamp {
+        margin-top: 15px; /* Reduced from 30px */
+        margin-left: 60px; /* Reduced from 120px */
+        border-radius: 100%;
+        height: 15px; /* Reduced from 30px */
+        width: 15px; /* Reduced from 30px */
+        background: #cb5a5e;
+        opacity: 0.3;
+    }
+
+    .shadow {
+        position: absolute;
+        top: 100px; /* Reduced from 200px */
+        left: 50%;
+        width: 140px; /* Reduced from 400px */
+        height: 15px; /* Reduced from 30px */
+        transition: .4s;
+        transform: translateX(-50%);
+        -webkit-transition: .4s;
+        -webkit-transform: translateX(-50%);
+        -moz-transition: .4s;
+        -moz-transform: translateX(-50%);
+        border-radius: 100%;
+        background: radial-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+    }
+
+    .shadow .letter-image:hover .animated-mail {
+        transform: translateY(50px);
+        -webkit-transform: translateY(50px);
+        -moz-transform: translateY(50px);
+    }
+
+    .shadow .animated-mail:hover .top-fold {
+        -webkit-transform: rotateX(-180deg);
+        -moz-transform: rotateX(-180deg);
+        transform: rotateX(-180deg);
+        z-index: 1;
+    }
+
+
+    .letter-image:hover .animated-mail .letter {
+        height: 80px; /*transformed from 180px*/
+    }
+
+    .letter-image:hover .shadow {
+        width: 69px; /*transformed from 280px*/
+    }
+
+
 }

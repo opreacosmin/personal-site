@@ -1,30 +1,33 @@
-import React from "react";
+import React, {useState} from "react";
 import './Card.css'
 import img from '../../resources/pexels-gabriel-peter-696644.jpg'
-import {Link} from "react-router-dom";
+import { motion } from 'framer-motion';
 
+function Card({title, description, image }){
 
-function Card(){
+    const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 });
+
     return(
         <>
-            <div className="card-container">
+            <motion.div
+                animate={animateCard}
+                transition={{ duration: 0.5, delayChildren: 0.5 }} className="card-container">
                 <div className="card">
                     <a href="">
-                    <div className="card--display">
-                        <img src={img} alt={''}/>
-                        <h2>Hot Tub Time Machine</h2>
-                    </div>
-                    <div className="card--hover">
-                        <h2>Hot Tub Time Machine</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam at est orci. Nam molestie
-                            pellentesque mi nec lacinia. Cras volutpat arcu sit amet elit sodales, nec volutpat velit
-                            bibendum.</p>
-                        <p className="link">Click to see project</p>
-                    </div>
-                </a>
+                        <div className="card--display">
+                            <img src={image} alt={''}/>
+                            <h2>{title}</h2>
+                        </div>
+
+                        <div className="card--hover">
+                            <h2>{title}</h2>
+                            <p>{description}</p>
+                            <p className="link">Click to see project</p>
+                        </div>
+                    </a>
                     <div className="card--border"/>
                 </div>
-            </div>
+            </motion.div>
         </>
     )
 }

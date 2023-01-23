@@ -1,46 +1,25 @@
 .about-container{
-    margin-top: 100px;
     width: 100%;
-    padding-bottom: 30px;
+    padding-bottom: 50px;
     display: flex;
+    flex-direction: column;
     box-shadow: 0 26px 4px -24px black;
 }
 
-.post-container{
-    width: 600px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: row;
-}
-.
 
 @media screen and (max-width: 700px) {
 
-    .post-container{
-        flex-direction: column;
-    }
-    .about-container .post-container .post{
+    .about-container  .post{
         margin: 0 auto;
         width: auto;
     }
-    .about-container .post-container >p{
-        width: auto;
-    }
 
 }
 
 
-.about-container .post-container h3{
-    max-width: 200px;
-    font-weight: 600;
-    padding: 10px;
-    line-height: 1.333;
-    font-size: 25px;
-}
-
-.about-container .post-container .post {
-    width: 350px;
-    margin: 10px;
+.about-container .post {
+    max-width: 600px;
+    margin: 10px auto;
     display: flex;
     text-decoration: none;
     color: inherit;
@@ -51,7 +30,7 @@
     cursor: pointer;
 }
 
-.about-container .post-container .post:before {
+.about-container  .post:before {
     position: absolute;
     left: 0;
     bottom: 0;
@@ -65,20 +44,93 @@
     transition: 0.4s ease-out;
 }
 
-.about-container .post-container .post:hover .post-title {
+.about-container  .post:hover .post-title {
     color: #fff;
 }
-.about-container .post-container .post:hover:before {
+.about-container  .post:hover:before {
     transform: scaleY(1);
 }
 
-.about-container .post-container .post-title {
+.about-container  .post-title {
     position: relative;
     font-size: 40px;
     font-weight: 700;
     line-height: 1.333;
     transition: .4s ease-out;
 }
-.about-container .post-container .post-title span {
+.about-container  .post-title span {
     color: dimgray;
+}
+
+.app__profiles {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.about-item{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    margin: 2rem;
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+.about-item .bold-text{
+    padding: 5px 20px;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--black-color);
+    text-align: left;
+    width: 100%;
+}
+
+.about-item .p-text{
+    padding: 0 20px 20px;
+    font-size: 1rem;
+    text-align: left;
+    color: var(--gray-color);
+    line-height: 1.5;
+}
+
+.about-item img{
+    width: 100%;
+    height: 170px;
+    border-radius: 15px;
+    object-fit: cover;
+}
+
+
+@media screen and (max-width: 670px) {
+    .about-container  .post-title {
+        font-size: 30px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .about-container  .post-title {
+        font-size: 23px;
+    }
+    .about-item img {
+
+        height: 150px;
+    }
+
+    .about-item .bold-text{
+        font-size: 1.3rem;
+    }
+
+    .about-item .p-text{
+        font-size: 0.8rem;
+    }
+}
+@media screen and (max-width: 380px) {
+    .about-container  .post-title {
+        font-size: 22px;
+    }
 }

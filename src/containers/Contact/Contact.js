@@ -8,54 +8,75 @@ function Contact(){
         <>
 
                 <div className='contact-wrapper'>
-                    <h1>Contact me!</h1>
+                    <div className='title'>
+                        <h1>Contact me and let's have a chat!</h1>
+                            <div className="letter-image">
+                                <div className="animated-mail">
+                                    <div className="back-fold"></div>
+                                    <div className="letter">
+                                        <div className="letter-border"></div>
+                                        <div className="letter-title"></div>
+                                        <div className="letter-context"></div>
+                                        <div className="letter-stamp">
+                                            <div className="letter-stamp-inner"></div>
+                                        </div>
+                                    </div>
+                                    <div className="top-fold"></div>
+                                    <div className="body"></div>
+                                    <div className="left-fold"></div>
+                                </div>
+                                <div className="shadow"></div>
+                            </div>
+                    </div>
+
                     <div className='subscription-container'>
-                        <form id="contact-form" className="form" role="form">
 
-                            <div className="form-group">
-                                <div className="col-sm-12">
-                                    <input  type="text"
-                                            className="form-control"
-                                            id="name"
-                                            placeholder="NAME"
-                                            name="name"
-                                            value="" required/>
-                                </div>
+                    <form id="contact-form" className="form" role="form">
+
+                        <div className="form-group">
+                            <div className="col-sm-12">
+                                <input  type="text"
+                                        className="form-control"
+                                        id="name"
+                                        placeholder="NAME"
+                                        name="name"
+                                        value="" required/>
                             </div>
-                            <div className="form-group">
-                                <div className="col-sm-12">
-                                    <input type="text"
-                                           className="form-control"
-                                           id="subject"
-                                           placeholder="SUBJECT"
-                                           name="subject"
-                                           value="" required/>
-                                </div>
+                        </div>
+                        <div className="form-group">
+                            <div className="col-sm-12">
+                                <input type="text"
+                                       className="form-control"
+                                       id="subject"
+                                       placeholder="SUBJECT"
+                                       name="subject"
+                                       value="" required/>
                             </div>
+                        </div>
 
-                            <div className="form-group">
-                                <div className="col-sm-12">
-                                    <input type="email"
-                                           className="form-control"
-                                           id="email"
-                                           placeholder="EMAIL"
-                                           name="email"
-                                           value="" required/>
-                                </div>
+                        <div className="form-group">
+                            <div className="col-sm-12">
+                                <input type="email"
+                                       className="form-control"
+                                       id="email"
+                                       placeholder="EMAIL"
+                                       name="email"
+                                       value="" required/>
                             </div>
+                        </div>
 
-                            <textarea className="form-control"
-                                      rows="10"
-                                      placeholder="MESSAGE"
-                                      name="message"
-                                      required/>
+                        <textarea className="form-control"
+                                  rows="10"
+                                  placeholder="MESSAGE"
+                                  name="message"
+                                  required/>
 
-                            <button className='form-btn'
-                                    buttonStyle='btn--outline'>
-                                    <span>Send</span>
-                                    <SendOutlinedIcon className='icon'/>
-                            </button>
-                        </form>
+                        <button className='form-btn'
+                                buttonStyle='btn--outline'>
+                                <span>Send</span>
+                                <SendOutlinedIcon className='icon'/>
+                        </button>
+                    </form>
                     </div>
                 </div>
 

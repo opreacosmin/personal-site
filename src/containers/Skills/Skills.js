@@ -38,7 +38,7 @@ function Skills(){
                     : (
                         <div className='list'>
                             <div className='item'>
-                                <h1>UI/UX Design consultant</h1>
+                                <h1>Full-stack web developer</h1>
                                 <h2>Freelance</h2>
                                 <p>07.2022-Present | Cluj-Napoca | Bucharest</p>
                             </div>

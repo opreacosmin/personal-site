@@ -1,13 +1,10 @@
 import React from "react";
 import './Header.css'
-import gif from '../../resources/spinning-logo.gif'
-import {Button} from "../../components/Buttons/Button";
 import { motion } from 'framer-motion';
-import circle from '../../resources/assets/circle.svg'
 import reacticn from '../../resources/assets/react.png'
 import cssicn from '../../resources/assets/css.png'
 import jsicn from '../../resources/assets/javascript.png'
-import { AppWrap } from '../../wrapper';
+import {AppWrap, MotionWrap} from '../../wrapper';
 
 function Header(){
 
@@ -34,32 +31,43 @@ function Header(){
 
                         <div className='badge'>
                             <div className='greeting'>
-                                <span>👋</span>
-                                <div>
-                                    <p className="p-text">Hello, I am</p>
-                                    <h1 className="head-text">Cosmin</h1>
+                                <div className="content__container">
+                                    <p className="content__container__text">
+                                        <span>👋</span>Hello
+                                    </p>
+                                <ul className="content__container__list">
+                                    <li className="content__container__list__item">world !</li>
+                                    <li className="content__container__list__item">clients !</li>
+                                    <li className="content__container__list__item">everybody !</li>
+                                </ul>
                                 </div>
                             </div>
+
+                            <div className='concept-six'>
+                                <h1>I am </h1>
+                                <div className='word'>
+                                    <div className='char'>O</div>
+                                    <div className='char'>P</div>
+                                    <div className='char'>R</div>
+                                    <div className='char'>E</div>
+                                    <div className='char'>A</div>
+                                    <div className='char'> </div>
+                                    <div className='char'>C</div>
+                                    <div className='char'>O</div>
+                                    <div className='char'>S</div>
+                                    <div className='char'>M</div>
+                                    <div className='char'>I</div>
+                                    <div className='char'>N</div>
+                                </div>
+                            </div>
+
                             <div className="tag">
-                                <p className="p-text">Web Developer</p>
-                                <p className="p-text">Freelancer</p>
+                                <h1>Full-stack developer</h1>
                             </div>
                         </div>
                      </motion.div>
 
-                    <motion.div
-                        whileInView={{ opacity: [0, 1] }}
-                        transition={{ duration: 0.5, delayChildren: 0.5 }}
-                        className="app__header-img"
-                    >
-                        <motion.img
-                            whileInView={{ scale: [0, 1] }}
-                            transition={{ duration: 1, ease: 'easeInOut' }}
-                            src={circle}
-                            alt="profile_circle"
-                            className="overlay_circle"
-                        />
-                    </motion.div>
+
 
                     <motion.div
                         variants={scaleVariants}

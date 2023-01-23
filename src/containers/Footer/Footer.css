@@ -86,7 +86,12 @@
     margin-bottom: 20px;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 400px) {
+
+    .contact-container > h1{
+        font-size: 40px;
+        margin-left: 0;
+    }
     .credits-container > p{
         font-size: 15px;
         margin-left: 0;
@@ -94,16 +99,24 @@
 }
 
 
-@media screen and (max-width: 700px) {
-    .credits-container .socials{
-        display: none;
+@media screen and (max-width: 400px) {
+    .credits-container > p{
+        font-size: 14px;
+        margin-left: 0;
     }
+}
+
+
+
+@media screen and (max-width: 700px) {
+
+
     .credits-container > p{
         position: absolute;
         left: 35px;
     }
     .contact-container .socials{
-        margin-top: 10px;
+        margin-top: 20px;
         display: block;
         position: relative;
     }
