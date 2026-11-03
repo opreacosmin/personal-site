@@ -361,7 +361,7 @@ export const testimonials: Testimonial[] = [
     role: 'Senior Developer',
     company: 'Raiffeisen Bank',
     content:
-      'Cosmin showed great initiative and technical ability during his internship. He quickly adapted to our tech stack and contributed meaningfully to our projects. A talented developer with a bright future ahead.',
+      'Cosmin showed great initiative and technical ability during his internship. . A talented developer with a bright future ahead.',
   },
   {
     id: '4',
