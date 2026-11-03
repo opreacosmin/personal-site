@@ -1,0 +1,303 @@
+.testimonials-container {
+  position: relative;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+  padding: 8rem 5% 6rem;
+  font-family: 'Maven Pro', sans-serif;
+
+  // Header Section
+  .testimonials-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .section-title {
+    font-size: 3.5rem;
+    font-weight: 950;
+    color: var(--text-heading);
+    margin: 0 0 1rem;
+    letter-spacing: -2px;
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
+    color: var(--text-body);
+    font-weight: 500;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  // Main Slider (shown on mobile, optional on desktop)
+  .testimonials-slider {
+    max-width: 800px;
+    margin: 0 auto 4rem;
+  }
+
+  .slider-container {
+    position: relative;
+  }
+
+  .testimonial-card {
+    background: var(--bg-white);
+    border-radius: 24px;
+    padding: 3rem;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    border: 1px solid var(--border-subtle);
+    text-align: center;
+    position: relative;
+
+    .quote-icon {
+      color: var(--brand-accent);
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+      opacity: 0.3;
+
+      svg {
+        font-size: 3rem;
+      }
+    }
+
+    .testimonial-content {
+      font-size: 1.25rem;
+      line-height: 1.8;
+      color: var(--text-body);
+      margin-bottom: 2rem;
+      font-style: italic;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 1.5rem;
+
+      .author-avatar {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-accent) 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 1.25rem;
+        font-weight: 600;
+      }
+
+      .author-info {
+        text-align: left;
+
+        .author-name {
+          font-size: 1.1rem;
+          font-weight: 700;
+          color: var(--text-heading);
+          margin-bottom: 0.25rem;
+        }
+
+        .author-role {
+          font-size: 0.95rem;
+          color: var(--text-body);
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+
+  .slider-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .slider-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--bg-white);
+    border: 2px solid var(--border-subtle);
+    color: var(--text-body);
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: var(--brand-primary);
+      border-color: var(--brand-primary);
+      color: white;
+      transform: scale(1.1);
+    }
+
+    svg {
+      font-size: 1.5rem;
+    }
+  }
+
+  .slider-dots {
+    display: flex;
+    gap: 0.75rem;
+  }
+
+  .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--border-subtle);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &.active {
+      background: var(--brand-primary);
+      transform: scale(1.2);
+    }
+
+    &:hover:not(.active) {
+      background: var(--brand-accent);
+    }
+  }
+
+  // Grid View for Desktop
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .testimonial-card-grid {
+    background: var(--bg-white);
+    border-radius: 20px;
+    padding: 2rem;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--border-subtle);
+    transition: all 0.3s ease;
+
+    &:hover {
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+      transform: translateY(-5px);
+    }
+
+    .quote-icon {
+      color: var(--brand-accent);
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      opacity: 0.3;
+
+      svg {
+        font-size: 2.5rem;
+      }
+    }
+
+    .testimonial-content {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: var(--text-body);
+      margin-bottom: 1.5rem;
+      font-style: italic;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 1.5rem;
+
+      .author-avatar {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-accent) 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 1.1rem;
+        font-weight: 600;
+      }
+
+      .author-info {
+        .author-name {
+          font-size: 1rem;
+          font-weight: 600;
+          color: var(--text-heading);
+          margin-bottom: 0.2rem;
+        }
+
+        .author-role {
+          font-size: 0.85rem;
+          color: var(--text-body);
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+}
+
+// Responsive
+@media screen and (max-width: 768px) {
+  .testimonials-container {
+    padding: 6rem 5% 4rem;
+
+    .section-title {
+      font-size: 2.5rem;
+    }
+
+    .testimonials-slider {
+      display: block;
+    }
+
+    .testimonials-grid {
+      display: none;
+    }
+
+    .testimonial-card {
+      padding: 2rem;
+
+      .testimonial-content {
+        font-size: 1.1rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .testimonials-container {
+    .section-title {
+      font-size: 2rem;
+    }
+
+    .testimonial-card {
+      padding: 1.5rem;
+
+      .quote-icon {
+        font-size: 2rem;
+
+        svg {
+          font-size: 2rem;
+        }
+      }
+
+      .testimonial-content {
+        font-size: 1rem;
+      }
+    }
+
+    .slider-controls {
+      gap: 1rem;
+    }
+
+    .slider-btn {
+      width: 40px;
+      height: 40px;
+    }
+  }
+}

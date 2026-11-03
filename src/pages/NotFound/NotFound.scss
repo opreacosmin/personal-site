@@ -1,0 +1,191 @@
+.not-found-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  position: relative;
+  overflow: hidden;
+
+  .not-found-content {
+    text-align: center;
+    z-index: 1;
+    max-width: 600px;
+  }
+
+  .error-illustration {
+    position: relative;
+    height: 150px;
+    margin-bottom: 2rem;
+
+    .astronaut {
+      font-size: 5rem;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+    }
+
+    .planet {
+      font-size: 3rem;
+      position: absolute;
+      right: 20%;
+      top: 20%;
+      opacity: 0.7;
+    }
+  }
+
+  .error-code {
+    font-size: 8rem;
+    font-weight: 700;
+    color: #fff;
+    margin: 0;
+    line-height: 1;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 30px rgba(102, 126, 234, 0.5);
+  }
+
+  .error-title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #fff;
+    margin: 0.5rem 0 1rem;
+  }
+
+  .error-message {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 2rem;
+    line-height: 1.6;
+  }
+
+  .error-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+
+    .action-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border: none;
+
+      svg {
+        font-size: 1.2rem;
+      }
+
+      &.primary {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: #fff;
+
+        &:hover {
+          box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+      }
+
+      &.secondary {
+        background: transparent;
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        color: #fff;
+
+        &:hover {
+          background: rgba(255, 255, 255, 0.1);
+          border-color: rgba(255, 255, 255, 0.5);
+        }
+      }
+    }
+  }
+
+  .useful-links {
+    color: rgba(255, 255, 255, 0.6);
+
+    p {
+      margin-bottom: 0.75rem;
+    }
+
+    .links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+
+      a {
+        color: #667eea;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: #764ba2;
+          text-decoration: underline;
+        }
+      }
+
+      span {
+        color: rgba(255, 255, 255, 0.3);
+      }
+    }
+  }
+
+  .floating-elements {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+
+    .star {
+      position: absolute;
+      font-size: 1.5rem;
+      opacity: 0.3;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .not-found-container {
+    padding: 1rem;
+
+    .error-code {
+      font-size: 5rem;
+    }
+
+    .error-title {
+      font-size: 1.5rem;
+    }
+
+    .error-message {
+      font-size: 1rem;
+    }
+
+    .error-illustration {
+      .astronaut {
+        font-size: 3.5rem;
+      }
+
+      .planet {
+        font-size: 2rem;
+      }
+    }
+
+    .error-actions {
+      .action-btn {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.9rem;
+      }
+    }
+  }
+}

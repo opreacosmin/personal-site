@@ -1,0 +1,18 @@
+.animated-asset {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+
+  // Prevent a few browsers from showing a focus ring on the non-interactive video.
+  &:focus {
+    outline: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animated-asset {
+    // Static poster image is rendered instead; nothing to animate.
+    animation: none !important;
+  }
+}

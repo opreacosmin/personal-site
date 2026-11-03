@@ -1,0 +1,270 @@
+.presentation-website {
+  position: relative;
+  width: 100%;
+  padding-top: 80px; // Spacing for Navbar
+  font-family: 'Maven Pro', sans-serif;
+  overflow-x: hidden;
+
+  // Hero Section
+  .hero-section {
+    padding: 120px 5%;
+    background: linear-gradient(135deg, var(--bg-neutral) 0%, var(--bg-white) 100%);
+    text-align: center;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      opacity: 0.03;
+      background-image: radial-gradient(var(--brand-primary) 0.5px, transparent 0.5px);
+      background-size: 30px 30px;
+    }
+
+    .hero-content {
+      max-width: 900px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+
+      h1 {
+        font-size: 4rem;
+        font-weight: 950;
+        color: var(--text-heading);
+        line-height: 1.1;
+        letter-spacing: -2px;
+        margin-bottom: 2rem;
+        text-transform: uppercase;
+
+        span {
+          display: block;
+          color: var(--brand-accent);
+        }
+
+        @media screen and (max-width: 768px) {
+          font-size: 2.5rem;
+        }
+      }
+
+      p {
+        font-size: 1.5rem;
+        color: var(--text-body);
+        line-height: 1.6;
+        font-weight: 500;
+      }
+    }
+  }
+
+  // Feature Rows
+  .feature-row {
+    padding: 100px 5%;
+    display: flex;
+    justify-content: center;
+
+    &.bg-alt {
+      background-color: var(--bg-subtle);
+    }
+
+    .container {
+      max-width: 1200px;
+      width: 100%;
+    }
+
+    .feature-content {
+      display: flex;
+      align-items: center;
+      gap: 5rem;
+
+      @media screen and (max-width: 1024px) {
+        flex-direction: column;
+        gap: 3rem;
+        text-align: center;
+      }
+
+      .text-block {
+        flex: 1;
+
+        &.center {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          max-width: 900px;
+          margin: 0 auto;
+        }
+
+        .icon-badge {
+          width: 60px;
+          height: 60px;
+          background: var(--brand-light);
+          color: var(--brand-accent);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 16px;
+          margin-bottom: 2rem;
+          box-shadow: 0 10px 20px rgba(99, 102, 241, 0.1);
+
+          svg {
+            font-size: 32px;
+          }
+
+          @media screen and (max-width: 1024px) {
+            margin: 0 auto 2rem;
+          }
+        }
+
+        h2 {
+          font-size: 3rem;
+          font-weight: 900;
+          color: var(--text-heading);
+          margin-bottom: 1.5rem;
+          letter-spacing: -1px;
+
+          @media screen and (max-width: 768px) {
+            font-size: 2rem;
+          }
+        }
+
+        p {
+          font-size: 1.2rem;
+          color: var(--text-body);
+          line-height: 1.7;
+          margin-bottom: 2.5rem;
+          font-weight: 500;
+        }
+
+        .action-btn {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          padding: 1rem 2.5rem;
+          background: var(--brand-primary);
+          color: white;
+          border: none;
+          border-radius: 12px;
+          font-size: 1.1rem;
+          font-weight: 800;
+          text-transform: uppercase;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          box-shadow: 0 10px 20px rgba(30, 58, 138, 0.2);
+
+          svg {
+            font-size: 16px;
+            transition: transform 0.3s ease;
+          }
+
+          &:hover {
+            background: var(--brand-accent);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(99, 102, 241, 0.3);
+
+            svg {
+              transform: translateX(5px);
+            }
+          }
+        }
+      }
+
+      .image-block {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+
+        img,
+        video {
+          max-width: 100%;
+          height: auto;
+          filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.1));
+
+          &.rounded-img {
+            border-radius: 32px;
+          }
+        }
+      }
+    }
+
+    &.reversed {
+      .feature-content {
+        flex-direction: row-reverse;
+
+        @media screen and (max-width: 1024px) {
+          flex-direction: column;
+        }
+      }
+    }
+  }
+
+  // Admin Preview Enhancement
+  .admin-preview {
+    margin: 3rem 0;
+    max-width: 100% !important;
+    border-radius: 20px;
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.15);
+    border: 1px solid var(--border-subtle);
+  }
+
+  // Features Grid
+  .features-grid-section {
+    padding: 100px 5%;
+    background-color: var(--brand-primary);
+    color: white;
+
+    .grid-title {
+      font-size: 3rem;
+      font-weight: 900;
+      text-align: center;
+      margin-bottom: 5rem;
+      text-transform: uppercase;
+      letter-spacing: -1px;
+
+      @media screen and (max-width: 768px) {
+        font-size: 2rem;
+      }
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .grid-card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      padding: 3rem 2rem;
+      border-radius: 24px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease;
+
+      h3 {
+        font-size: 1.5rem;
+        font-weight: 800;
+        margin-bottom: 1rem;
+        color: white;
+      }
+
+      p {
+        font-size: 1rem;
+        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.8);
+      }
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.1);
+        border-color: var(--brand-accent);
+      }
+    }
+  }
+
+  .last-section {
+    background: #ffffff !important;
+    position: relative;
+    z-index: 1;
+
+    // Optional: add a subtle shadow or separator if needed, but user just said "alb"
+  }
+}

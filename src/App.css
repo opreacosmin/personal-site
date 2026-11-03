@@ -1,0 +1,74 @@
+.app {
+    width: 100%!important;
+    height: 100%;
+
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE 10+ */
+    background-color: var(--background-primary);
+    color: var(--text-primary);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark mode specific styles */
+[data-theme='dark'] .app {
+    background-color: var(--background-primary);
+    color: var(--text-primary);
+}
+
+/* Focus styles for interactive elements */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+
+.app__container {
+    width: 100%;
+    /* min-height: 90vh; */
+    display: flex;
+    flex-direction: row;
+}
+
+.app__wrapper {
+    width: 100%;
+    flex-direction: column;
+}
+
+@media screen and (max-width: 450px) {
+    .app__container {
+        min-height: 0;
+    }
+}
+
+.app__navigation {
+    right: 1.5rem;
+    margin-top: 15rem;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.app__navigation-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #cbcbcb;
+    margin-top: 1rem;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.app__navigation-dot:hover {
+    background-color: hblack;
+}
+
+@media screen and (max-width: 400px) {
+    .app__navigation {
+        display: none;
+    }
+}

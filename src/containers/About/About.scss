@@ -1,0 +1,320 @@
+.about-container {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+  font-family: 'Maven Pro', sans-serif;
+
+  // About Hero Section
+  .about-hero {
+    padding: 120px 5% 60px;
+    background: linear-gradient(180deg, #e0e7ff 0%, #f8fafc 100%);
+    position: relative;
+    text-align: center;
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      opacity: 0.03;
+      background-image: radial-gradient(var(--brand-primary) 0.5px, transparent 0.5px);
+      background-size: 30px 30px;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .section-title {
+      font-size: 4rem;
+      font-weight: 950;
+      color: var(--text-heading);
+      margin: 0 0 1rem;
+      letter-spacing: -2px;
+    }
+
+    .hero-subtitle {
+      font-size: 1.3rem;
+      color: var(--text-body);
+      font-weight: 500;
+    }
+  }
+
+  // Main Content Area
+  .about-content {
+    display: flex;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 4rem 5%;
+    gap: 4rem;
+
+    @media screen and (max-width: 1024px) {
+      flex-direction: column;
+    }
+  }
+
+  // Timeline Section
+  .timeline-section {
+    flex: 1.5;
+  }
+
+  .tab-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 3rem;
+  }
+
+  .tab-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 1rem 2rem;
+    background: var(--bg-white);
+    border: 2px solid var(--border-subtle);
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-body);
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      border-color: var(--brand-accent);
+      color: var(--brand-accent);
+    }
+
+    &.active {
+      background: var(--brand-primary);
+      border-color: var(--brand-primary);
+      color: white;
+    }
+
+    svg {
+      font-size: 1.2rem;
+    }
+  }
+
+  .timeline-list {
+    position: relative;
+    padding-left: 2rem;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(180deg, var(--brand-primary) 0%, var(--brand-accent) 100%);
+    }
+  }
+
+  .timeline-item {
+    position: relative;
+    padding: 1.5rem 0;
+    padding-left: 2rem;
+  }
+
+  .timeline-marker {
+    position: absolute;
+    left: -2rem;
+    top: 1.5rem;
+    width: 12px;
+    height: 12px;
+    background: var(--brand-primary);
+    border: 3px solid var(--bg-white);
+    border-radius: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 0 0 3px var(--brand-primary);
+  }
+
+  .timeline-content-item {
+    background: var(--bg-white);
+    padding: 1.5rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--border-subtle);
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translateX(10px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    }
+  }
+
+  .item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.75rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+
+    h3 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--text-heading);
+      margin: 0;
+    }
+  }
+
+  .period-badge {
+    background: var(--brand-primary);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 100px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .faculty,
+  .company {
+    font-size: 1rem;
+    color: var(--brand-accent);
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+  }
+
+  .degree {
+    font-size: 1rem;
+    color: var(--text-body);
+    margin-bottom: 0.25rem;
+  }
+
+  .description {
+    font-size: 0.95rem;
+    color: var(--text-body);
+    line-height: 1.6;
+    margin: 0.75rem 0;
+  }
+
+  .location {
+    font-size: 0.9rem;
+    color: var(--text-body);
+    opacity: 0.7;
+  }
+
+  // Skills Section
+  .skills-section {
+    flex: 1;
+  }
+
+  .skills-title {
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--text-heading);
+    margin-bottom: 2rem;
+    letter-spacing: -1px;
+  }
+
+  .skills-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .skill-card {
+    background: var(--bg-white);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--border-subtle);
+    cursor: pointer;
+  }
+
+  .skill-icon {
+    margin-bottom: 1.5rem;
+  }
+
+  .icon-circle {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-accent) 100%);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+  }
+
+  .skill-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--text-heading);
+    margin-bottom: 1rem;
+  }
+
+  .skill-description {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text-body);
+  }
+
+  .skill-indicator {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-subtle);
+
+    .label {
+      font-size: 0.85rem;
+      color: var(--text-body);
+      opacity: 0.7;
+    }
+
+    .check {
+      color: var(--brand-accent);
+      font-weight: bold;
+    }
+  }
+}
+
+// Responsive
+@media screen and (max-width: 768px) {
+  .about-container {
+    .about-hero {
+      padding: 100px 5% 40px;
+
+      .section-title {
+        font-size: 2.5rem;
+      }
+    }
+
+    .about-content {
+      padding: 2rem 5%;
+      gap: 3rem;
+    }
+
+    .tab-buttons {
+      justify-content: center;
+    }
+
+    .tab-btn {
+      padding: 0.75rem 1.5rem;
+      font-size: 0.9rem;
+    }
+
+    .timeline-content-item {
+      padding: 1.25rem;
+    }
+
+    .item-header {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .timeline-list {
+      padding-left: 1.5rem;
+    }
+
+    .timeline-item {
+      padding-left: 1.5rem;
+    }
+
+    .timeline-marker {
+      left: -1.5rem;
+    }
+  }
+}

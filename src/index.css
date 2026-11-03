@@ -1,0 +1,117 @@
+.root::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.root::-webkit-scrollbar-thumb {
+  background-color: black;
+  border-radius: 4px;
+}
+
+.root::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  /* Professional Business Palette */
+  --bg-white: #ffffff;
+  --bg-subtle: #f8fafc;
+  --bg-neutral: #f1f5f9;
+
+  --brand-primary: #1e3a8a;
+  /* Navy 900 */
+  --brand-accent: #6366f1;
+  /* Indigo 500 - Sophisticated */
+  --brand-light: #f1f5f9;
+
+  --text-heading: #0f172a;
+  /* Slate 900 */
+  --text-body: #334155;
+  /* Slate 700 */
+  --text-muted: #64748b;
+  /* Slate 500 */
+
+  --border-subtle: #e2e8f0;
+  --border-strong: #cbd5e1;
+
+  /* Legacy variable mapping for compatibility */
+  --primary-color: var(--bg-neutral);
+  --secondary-color: var(--brand-light);
+  --black-color: var(--text-heading);
+  --gray-color: var(--text-muted);
+  --text-primary: var(--text-heading);
+  --text-secondary: var(--text-body);
+  --background-primary: var(--bg-white);
+  --background-secondary: var(--bg-subtle);
+  --border-color: var(--border-subtle);
+  --accent-color: var(--brand-accent);
+  --error-color: #e53e3e;
+  --success-color: #38a169;
+
+  font-synthesis: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Dark mode variables - simplified for now as user preferred light theme */
+[data-theme='dark'] {
+  --background-primary: #0f172a;
+  --text-primary: #f8fafc;
+}
+
+html,
+body {
+  height: 100%;
+  padding: 0 !important;
+  width: 100% !important;
+  font-family: 'Assistant', sans-serif;
+  margin: 0 !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--background-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Focus visible styles for keyboard navigation */
+:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+/* Skip to main content link for accessibility */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--black-color);
+  color: white;
+  padding: 8px;
+  text-decoration: none;
+  z-index: 10000;
+  transition: top 0.3s;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

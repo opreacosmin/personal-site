@@ -1,0 +1,148 @@
+.card {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+  font-family: 'Maven Pro', sans-serif;
+
+  .a {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 480px;
+    background: var(--bg-white);
+    text-decoration: none;
+    border-radius: 24px;
+    overflow: hidden;
+    z-index: 2;
+    transition: all 0.5s cubic-bezier(0.2, 1, 0.3, 1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    border: 1px solid var(--border-subtle);
+
+    &:hover {
+      transform: translate(-12px, -12px);
+      box-shadow: 20px 20px 40px rgba(15, 23, 42, 0.1);
+      border-color: var(--brand-accent);
+
+      .card--display {
+        transform: scale(1.05);
+
+        &::after {
+          opacity: 0.8;
+        }
+      }
+
+      .card--hover {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .card--display {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.6s ease;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .card--placeholder {
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, var(--bg-soft, #f1f5f9), var(--bg-white));
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to top, rgba(15, 23, 42, 0.9), transparent 60%);
+        transition: opacity 0.4s ease;
+      }
+
+      h2 {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 2rem;
+        z-index: 10;
+        color: white;
+        font-size: 1.75rem;
+        font-weight: 800;
+        margin: 0;
+      }
+    }
+
+    .card--hover {
+      position: absolute;
+      inset: 0;
+      padding: 3rem 2rem;
+      background: rgba(15, 23, 42, 0.95);
+      backdrop-filter: blur(8px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.5s cubic-bezier(0.2, 1, 0.3, 1);
+      z-index: 20;
+
+      h2 {
+        color: white;
+        font-size: 2rem;
+        font-weight: 900;
+        margin-bottom: 1rem;
+      }
+
+      p {
+        color: #e2e8f0;
+        font-size: 16px;
+        line-height: 1.6;
+        margin-bottom: 2.5rem;
+      }
+
+      .link {
+        color: white;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 14px;
+        padding: 12px 28px;
+        background: var(--brand-accent);
+        border-radius: 12px;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+
+        &:hover {
+          background: white;
+          color: var(--brand-accent);
+          transform: scale(1.05);
+        }
+      }
+    }
+  }
+
+  /* Redesigned dotted border for the professional look */
+  .card--border {
+    position: absolute;
+    inset: 0;
+    border: 2px dashed var(--text-heading);
+    border-radius: 24px;
+    z-index: 1;
+    opacity: 0.1;
+    transition: all 0.5s ease;
+  }
+
+  &:hover .card--border {
+    opacity: 0.3;
+    transform: translate(8px, 8px);
+  }
+}

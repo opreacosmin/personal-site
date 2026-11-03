@@ -1,0 +1,166 @@
+.work-container {
+  padding: 120px 5%;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-neutral); // Professional neutral background
+  position: relative;
+  overflow: hidden;
+  font-family: 'Maven Pro', sans-serif;
+
+  // Blending transition from white Services section
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 300px;
+    background: linear-gradient(to bottom, var(--bg-white), transparent);
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  // Large background text for interest - subtle now
+  .bg-text {
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    font-size: 15vw;
+    font-weight: 900;
+    color: rgba(15, 23, 42, 0.03); // Very subtle slate
+    text-transform: uppercase;
+    white-space: nowrap;
+    pointer-events: none;
+    z-index: 0;
+    user-select: none;
+  }
+
+  // Floating glows - subtle branding
+  .glow-blob {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.05) 0%, transparent 70%);
+    border-radius: 50%;
+    filter: blur(80px);
+    z-index: 0;
+    pointer-events: none;
+
+    &.blob-1 {
+      top: 10%;
+      right: -15%;
+    }
+
+    &.blob-2 {
+      bottom: 0%;
+      left: -15%;
+    }
+  }
+
+  .header-text-container {
+    text-align: center;
+    max-width: 1000px;
+    margin: 0 auto 5rem;
+    position: relative;
+    z-index: 2;
+
+    .section-title {
+      font-size: 4rem;
+      font-weight: 900;
+      color: var(--text-heading);
+      margin-bottom: 1.5rem;
+      text-transform: uppercase;
+      letter-spacing: -2px;
+      line-height: 1;
+
+      span {
+        display: block;
+        color: transparent;
+        -webkit-text-stroke: 1.5px var(--brand-accent);
+        opacity: 0.6;
+      }
+    }
+
+    .section-subtitle {
+      font-size: 1.25rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      font-weight: 500;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+  }
+
+  .app__work-filter {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 5rem;
+    position: relative;
+    z-index: 2;
+
+    .app__work-filter-item {
+      padding: 0.8rem 2rem;
+      background: var(--bg-white);
+      color: var(--text-muted);
+      font-weight: 700;
+      border: 1px solid var(--border-subtle);
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &:hover {
+        border-color: var(--brand-accent);
+        color: var(--brand-accent);
+        transform: translateY(-3px);
+      }
+
+      &.item-active {
+        background: var(--brand-primary);
+        color: white;
+        border-color: var(--brand-primary);
+        box-shadow: 0 10px 20px rgba(30, 64, 175, 0.2);
+      }
+    }
+  }
+
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    gap: 3rem;
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .work-container {
+    padding: 100px 5%;
+
+    .header-text-container .section-title {
+      font-size: 3.5rem;
+    }
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .work-container {
+    padding: 80px 5%;
+
+    .header-text-container .section-title {
+      font-size: 2.5rem;
+    }
+
+    .app__work-filter {
+      flex-wrap: wrap;
+
+      .app__work-filter-item {
+        padding: 0.6rem 1.2rem;
+        font-size: 14px;
+      }
+    }
+  }
+}
