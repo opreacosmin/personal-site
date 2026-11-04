@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import HomeIcon from '@mui/icons-material/Home';
 import SearchIcon from '@mui/icons-material/Search';
 import SEO from '../../components/SEO/SEO';
+import gif from '../../assets/Animation - 404 error.gif';
 
 function NotFound() {
   const navigate = useNavigate();
@@ -35,9 +36,11 @@ function NotFound() {
               ease: 'easeInOut',
             }}
           >
-            <span role="img" aria-label="astronaut">
-              👨‍🚀
-            </span>
+            <img className="error-gif"
+          src={gif}
+          alt="Ilustrație 404 cu o pisică curiosasă"
+          loading="eager"/>
+
           </motion.div>
           <motion.div
             className="planet"
@@ -56,8 +59,8 @@ function NotFound() {
           </motion.div>
         </div>
 
-        <h1 className="error-code">404</h1>
-        <h2 className="error-title">Page Not Found</h2>
+        {/* <h1 className="error-code">404</h1> */}
+        <h2 className="error-title">404 Page Not Found</h2>
         <p className="error-message">
           Oops! It seems you&apos;ve ventured into uncharted space.
           <br />

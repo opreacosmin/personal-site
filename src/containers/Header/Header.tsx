@@ -131,7 +131,7 @@ function Header() {
             </AnimatePresence>
           </div>
 
-          <button
+          {/* <button
             onClick={() => {
               const element = document.getElementById('services');
               if (element) {
@@ -142,7 +142,7 @@ function Header() {
             aria-label="Descoperă"
           >
             Descoperă
-          </button>
+          </button> */}
         </div>
       </motion.div>
     </div>

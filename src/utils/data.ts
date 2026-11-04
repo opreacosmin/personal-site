@@ -15,14 +15,11 @@ export const personalInfo = {
 
 // Navigation Items
 export const navigationItems = [
-  { id: 'home', label: 'Home' },
-  { id: 'services', label: 'Services' },
-  { id: 'portfolio', label: 'Portfolio' },
-  { id: 'blog', label: 'Blog' },
-  { id: 'testimonials', label: 'Testimonials' },
-  { id: 'about', label: 'About' },
-  { id: 'contact', label: 'Contact' },
-] as const;
+  { id: 'home',      label: 'Home',      route: '/' },
+  { id: 'portfolio', label: 'Portfolio', route: '/projects' },
+  { id: 'blog',      label: 'Blog',      route: '/blog' },
+  { id: 'contact',   label: 'Contact',   route: '/#contact' },
+];
 
 // Education Data
 export interface Education {

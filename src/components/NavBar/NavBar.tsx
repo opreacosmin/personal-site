@@ -5,16 +5,15 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
-import { useNavigate } from 'react-router-dom';
 import { navigationItems, personalInfo } from '../../utils/data';
-import DarkModeToggle from '../DarkModeToggle/DarkModeToggle';
 
 function NavBar() {
   const [menuClick, setMenuClick] = useState<boolean>(false);
   const [scrolled, setScrolled] = useState<boolean>(false);
   const navigate = useNavigate();
+  const location = useLocation();
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -28,6 +27,34 @@ function NavBar() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // React Router does not scroll to hash targets automatically. Retry briefly so
+  // links like "/#contact" also work when the Home page is lazy-loaded.
+  React.useEffect(() => {
+    if (!location.hash) {
+      return;
+    }
+
+    const id = decodeURIComponent(location.hash.slice(1));
+    let attempts = 0;
+
+    const timer = window.setInterval(() => {
+      const element = document.getElementById(id);
+
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        window.clearInterval(timer);
+        return;
+      }
+
+      attempts += 1;
+      if (attempts >= 20) {
+        window.clearInterval(timer);
+      }
+    }, 100);
+
+    return () => window.clearInterval(timer);
+  }, [location.hash, location.pathname]);
 
   const toggleMenu = (): void => {
     setMenuClick(!menuClick);
@@ -54,7 +81,7 @@ function NavBar() {
         <img src={logo} alt="Oprea Cosmin Alexandru Logo" loading="eager" />
       </Link>
 
-      <DarkModeToggle />
+      {/* <DarkModeToggle /> */}
 
       <button
         className="menu-toggle-btn"
@@ -73,15 +100,15 @@ function NavBar() {
       <div id="nav-menu" className={menuClick ? 'nav-menu active' : 'nav-menu'} role="menu">
         <div className="nav-links" role="menubar">
           {navigationItems.map((item, index) => (
-            <Link
-              to={{ pathname: '/', hash: `#${item.id}` }}
-              onClick={handleNavLinkClick}
-              key={`${item.id}-${index}`}
-              role="menuitem"
-              aria-label={`Navigate to ${item.label} section`}
-            >
-              {item.label}
-            </Link>
+              <Link
+    to={item.route}
+    onClick={handleNavLinkClick}
+    key={`${item.id}-${index}`}
+    role="menuitem"
+    aria-label={`Navigate to ${item.label}`}
+  >
+    {item.label}
+  </Link>
           ))}
         </div>
         <div className="nav-socials">
