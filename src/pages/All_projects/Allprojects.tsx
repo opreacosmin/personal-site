@@ -67,12 +67,12 @@ function Allprojects() {
 
       {/* Page Header */}
       <div className="page-header">
-        <button onClick={goHome} className="back-btn" aria-label="Go back home">
+        {/* <button onClick={goHome} className="back-btn" aria-label="Go back home">
           <ArrowBackIosIcon />
           <span>Home</span>
-        </button>
+        </button> */}
         <h1>Project Gallery</h1>
-        <p className="subtitle">Explore our complete portfolio of digital solutions</p>
+        <p className="subtitle">Explore the complete portfolio of digital solutions</p>
       </div>
 
       {loading ? (

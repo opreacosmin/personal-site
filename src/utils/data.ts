@@ -15,7 +15,7 @@ export const personalInfo = {
 
 // Navigation Items
 export const navigationItems = [
-  { id: 'home',      label: 'Home',      route: '/' },
+  { id: 'home',      label: 'Home',      route: '/#home' },
   { id: 'portfolio', label: 'Portfolio', route: '/projects' },
   { id: 'blog',      label: 'Blog',      route: '/blog' },
   { id: 'contact',   label: 'Contact',   route: '/#contact' },

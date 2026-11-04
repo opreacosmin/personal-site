@@ -65,14 +65,14 @@
 
   // Filter Section
   .filter-section {
-    padding: 2rem 5%;
+    padding: 1em 5%;
     display: flex;
     justify-content: center;
     background: var(--bg-white);
     border-bottom: 1px solid var(--border-subtle);
-    position: sticky;
-    top: 80px;
+    position: relative;
     z-index: 100;
+    margin-top: -1rem;
   }
 
   .filter-container {
@@ -131,6 +131,12 @@
       grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
       gap: 2.5rem;
       justify-items: center;
+
+      // framer-motion wrappers shrink-to-fit around the absolutely positioned
+      // card content, which collapses the cards to 0 width without this.
+      > * {
+        width: 100%;
+      }
     }
 
     .no-projects {
@@ -167,7 +173,6 @@
 
     .filter-section {
       padding: 1.5rem 3%;
-      top: 70px;
     }
 
     .filter-container {
