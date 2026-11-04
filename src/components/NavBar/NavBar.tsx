@@ -73,15 +73,15 @@ function NavBar() {
       <div id="nav-menu" className={menuClick ? 'nav-menu active' : 'nav-menu'} role="menu">
         <div className="nav-links" role="menubar">
           {navigationItems.map((item, index) => (
-            <a
+            <Link
+              to={{ pathname: '/', hash: `#${item.id}` }}
               onClick={handleNavLinkClick}
-              href={`/#${item.id}`}
               key={`${item.id}-${index}`}
               role="menuitem"
               aria-label={`Navigate to ${item.label} section`}
             >
               {item.label}
-            </a>
+            </Link>
           ))}
         </div>
         <div className="nav-socials">

@@ -13,8 +13,11 @@ import {
   personalInfo,
 } from '../../utils/data';
 
+import frontendIcon from './img.png';
+import backendIcon from './img_1.png';
+
 function About() {
-  const [activeTab, setActiveTab] = useState<'education' | 'experience'>('education');
+  const [activeTab, setActiveTab] = useState<'education' | 'experience'>('experience');
 
   return (
     <div className="about-container">
@@ -144,13 +147,10 @@ function About() {
                 <div className="skill-icon">
                   <div className="icon-circle">
                     {skill.imageKey === 'frontend' ? (
-                      <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor">
-                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-                      </svg>
+                        <img src={frontendIcon} alt="Frontend" width={160} height={150} />
+
                     ) : (
-                      <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor">
-                        <path d="M20 13v4a2 2 0 01-2 2H4a2 2 0 01-2-2v-4m14-6l-6-6-6 6m12 0H4" />
-                      </svg>
+                        <img src={backendIcon} alt="Frontend" width={160} height={150} />
                     )}
                   </div>
                 </div>

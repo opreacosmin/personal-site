@@ -32,7 +32,7 @@ function RouteErrorBoundary({ children }: { children: React.ReactNode }) {
 function App() {
   return (
     <div className={'app'}>
-      <Router>
+      <Router basename="/personal-site">
         <Analytics />
         <NavBar />
         <RouteErrorBoundary>

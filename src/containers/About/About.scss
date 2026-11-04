@@ -145,7 +145,7 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.2rem;
     flex-wrap: wrap;
     gap: 0.5rem;
 
@@ -172,7 +172,7 @@
     font-size: 1rem;
     color: var(--brand-accent);
     font-weight: 600;
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.2rem;
   }
 
   .degree {
@@ -222,20 +222,20 @@
     cursor: pointer;
   }
 
-  .skill-icon {
-    margin-bottom: 1.5rem;
-  }
+  // .skill-icon {
+  //   margin-bottom: 1.5rem;
+  // }
 
-  .icon-circle {
-    width: 60px;
-    height: 60px;
-    background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-accent) 100%);
-    border-radius: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-  }
+  // .icon-circle {
+  //   width: 60px;
+  //   height: 60px;
+  //   background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-accent) 100%);
+  //   border-radius: 16px;
+  //   display: flex;
+  //   align-items: center;
+  //   justify-content: center;
+  //   color: white;
+  // }
 
   .skill-title {
     font-size: 1.5rem;

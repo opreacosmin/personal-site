@@ -42,12 +42,17 @@ function Services() {
               transition={{ duration: 0.5 }}
               className="split-content"
             >
-              <AnimatedAsset
-                name={serviceAnimations[servicesData[0].image]}
-                alt={servicesData[0].title}
-                width={150}
-                height={150}
-              />
+              <div className="iphone-frame">
+                <div className="iphone-notch" />
+                  <AnimatedAsset
+                    name={serviceAnimations[servicesData[0].image]}
+                    alt={servicesData[0].title}
+                    width={150}
+                    height={150}
+                    className="iphone-screen"
+                  />
+              </div>
+
               <h3>{servicesData[0].title}</h3>
               <p>{servicesData[0].description}</p>
               <button className="swipe-btn">Echilibrează Brandul</button>
@@ -66,12 +71,16 @@ function Services() {
               transition={{ duration: 0.5 }}
               className="split-content"
             >
-              <AnimatedAsset
-                name={serviceAnimations[servicesData[1].image]}
-                alt={servicesData[1].title}
-                width={150}
-                height={150}
-              />
+              <div className="iphone-frame">
+                <div className="iphone-notch" />
+                  <AnimatedAsset
+                    name={serviceAnimations[servicesData[1].image]}
+                    alt={servicesData[1].title}
+                    width={150}
+                    height={150}
+                    className="iphone-screen"
+                  />
+                  </div>
               <h3>{servicesData[1].title}</h3>
               <p>{servicesData[1].description}</p>
               <button className="swipe-btn">Crește Vânzările</button>

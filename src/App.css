@@ -64,10 +64,10 @@ textarea:focus-visible {
 }
 
 .app__navigation-dot:hover {
-    background-color: hblack;
+    background-color: var(--brand-primary);
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 800px) {
     .app__navigation {
         display: none;
     }

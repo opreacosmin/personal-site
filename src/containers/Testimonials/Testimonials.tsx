@@ -56,7 +56,7 @@ function Testimonials() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          Ce spun clienții
+          Ce spun oamenii
         </motion.h2>
         <motion.p
           className="subtitle"
@@ -64,14 +64,14 @@ function Testimonials() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
         >
-          Recomandări de la companii și persoane cu care am colaborat
+          Recomandări de la foști colaboratori
         </motion.p>
       </div>
 
       {/* Main Slider */}
       <div className="testimonials-slider">
         <div className="slider-container">
-          <AnimatePresence initial={false} custom={direction}>
+          <AnimatePresence initial={false} custom={direction} mode='wait'>
             <motion.div
               key={currentIndex}
               custom={direction}
@@ -82,7 +82,7 @@ function Testimonials() {
               transition={{
                 x: { type: 'spring', stiffness: 300, damping: 30 },
                 opacity: { duration: 0.3 },
-                scale: { duration: 0.3 },
+                // scale: { duration: 0.3 },
               }}
               className="testimonial-card"
             >

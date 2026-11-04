@@ -33,12 +33,21 @@ const backgroundIconsList = [
 
 function Header() {
   const [index, setIndex] = useState(0);
+  const [greetingIndex, setGreetingIndex] = useState(0);
 
   useEffect(() => {
-    const timer = setInterval(() => {
+    const servicesTimer = setInterval(() => {
       setIndex((prevIndex) => (prevIndex + 1) % headerServices.length);
     }, 3000);
-    return () => clearInterval(timer);
+
+    const greetingsTimer = setInterval(() => {
+      setGreetingIndex((prevGreeting) => (prevGreeting + 1) % headerGreetings.length);
+    }, 3000);
+
+    return () => {
+      clearInterval(servicesTimer);
+      clearInterval(greetingsTimer);
+    };
   }, []);
 
   // Pre-generate random data for icons to avoid re-renders and overlap
@@ -94,14 +103,10 @@ function Header() {
         <div className="content">
           <div className="greeting">
             <div className="content__container">
-              <p className="content__container__text">Hello</p>
-              <ul className="content__container__list">
-                {headerGreetings.map((greeting, index) => (
-                  <li key={index} className="content__container__list__item">
-                    {greeting}
-                  </li>
-                ))}
-              </ul>
+              <span className="content__container__text">Hello</span>
+              <span key={greetingIndex} className="content__container__word">
+                {headerGreetings[greetingIndex]}
+              </span>
             </div>
           </div>
         </div>
@@ -134,9 +139,9 @@ function Header() {
               }
             }}
             className="download-btn"
-            aria-label="Descoperă serviciile noastre"
+            aria-label="Descoperă"
           >
-            Descopera serviciile noastre
+            Descoperă
           </button>
         </div>
       </motion.div>

@@ -54,9 +54,25 @@ export interface Experience {
 
 export const experienceData: Experience[] = [
   {
+    title: 'Full-stack Developer',
+    company: 'Freelance',
+    period: '07.2022 - prezent',
+    location: 'Remote',
+    description:
+      'Creez tooluri și soluții web inteligente, fie pentru mine, fie pentru clienți. Fiecare proiect pornește de la o nevoie reală și se construiește în jurul ei.',
+  },
+  {
+    title: 'QA Analyst',
+    company: 'Quantic Lab',
+    period: '05.2025 - 09.2025',
+    location: 'Cluj-Napoca',
+    description:
+    '„Testarea manuală și automată jocurilor video, scrierea și executarea cazurilor de test, raportarea și urmărirea defectelor până la rezolvare."'
+  },
+  {
     title: 'Dezvoltator WordPress',
     company: 'MySkin SRL',
-    period: '08.2024 - Prezent',
+    period: '08.2024 - 01.2025',
     location: 'București',
     description:
       'Dezvoltarea și întreținerea site-urilor WordPress, implementarea de teme și plugin-uri personalizate, optimizarea performanței și SEO a site-urilor.',
@@ -67,16 +83,9 @@ export const experienceData: Experience[] = [
     period: '12.2023 - 03.2024',
     location: 'Cluj-Napoca',
     description:
-      'Lucrul la soluții bancare inovatoare, colaborarea cu echipe multifuncționale și contribuția la dezvoltarea instrumentelor interne.',
+      'Am dobândit experiență practică prin construirea unei aplicații mobile pentru zona financiară, într-un context de colaborare cu echipe multifuncționale (activitate de practică).'
   },
-  {
-    title: 'Dezvoltator Web Full-stack',
-    company: 'Freelance',
-    period: '07.2022 - 08.2024',
-    location: 'Cluj-Napoca | București',
-    description:
-      'Oferirea de soluții web personalizate pentru diverse companii, de la afaceri mici la startup-uri. Specializare în React, Node.js și tehnologii web moderne.',
-  },
+  
 ];
 
 // Skills Data with Tech Stack
@@ -341,35 +350,26 @@ export interface Testimonial {
 export const testimonials: Testimonial[] = [
   {
     id: '1',
-    name: 'Alexandru Popescu',
+    name: 'Monica M.',
     role: 'Project Manager',
     company: 'MySkin SRL',
     content:
-      'Cosmin delivered exceptional work on our WordPress website. His attention to detail, technical expertise, and ability to understand our business needs made the collaboration seamless. Highly recommended!',
-  },
+      'Cosmin a realizat o treabă excepțională la site-ul nostru WordPress. Atenția sa la detalii, expertiza tehnică și capacitatea de a înțelege nevoile afacerii noastre au făcut ca această colaborare să decurgă impecabil. Îl recomand cu încredere!'
+    },
   {
     id: '2',
-    name: 'Maria Ionescu',
-    role: 'Startup Founder',
-    company: 'TechStart Romania',
-    content:
-      'Working with Cosmin was a game-changer for our startup. He built our entire web platform from scratch, and the results exceeded our expectations. His communication skills and technical knowledge are outstanding.',
+    name: 'Michael S.',
+    role: 'Restaurant Owner',
+    company: 'MrRibs SRL',
+    content: 'Cosmin created a modern presentation website for us, with a theme well-suited to our restaurant. He understood what we wanted, and the result looks great. I recommend him.'
   },
   {
     id: '3',
-    name: 'Cristian Dumitru',
-    role: 'Senior Developer',
+    name: 'Eduard G.',
+    role: 'Ex-Senior Engineer',
     company: 'Raiffeisen Bank',
     content:
-      'Cosmin showed great initiative and technical ability during his internship. . A talented developer with a bright future ahead.',
-  },
-  {
-    id: '4',
-    name: 'Elena Stan',
-    role: 'E-commerce Manager',
-    company: 'Fashion Boutique',
-    content:
-      'The online store Cosmin built for us has significantly increased our sales. He understood our requirements perfectly and delivered a beautiful, fast, and user-friendly e-commerce solution.',
+      'Cosmin showed great initiative and technical ability during his internship. A talented developer with a bright future ahead.',
   },
 ];
 
